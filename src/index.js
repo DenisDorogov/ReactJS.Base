@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const myName = 'Denis';
+const showRed = true;
+const margin = false;
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name={myName} showRed={showRed} topPosition={margin}  />
   </React.StrictMode>,
   document.getElementById('root')
 );
