@@ -9,7 +9,7 @@ const inputMessage = 'Some message';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App text={inputMessage} greeting={GREETING}/>
+    <App text={inputMessage} greeting={GREETING} user={'Den'}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

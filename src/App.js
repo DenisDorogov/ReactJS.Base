@@ -7,7 +7,7 @@ function App(props) {
       <header className='App-header'>
         <h1 className='heading'>{props.greeting}</h1> 
       </header>
-      <Message text={props.text}/>
+      <Message text={props.text} user={props.user}/>
     </div> 
   ); 
 }

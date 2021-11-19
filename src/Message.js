@@ -1,9 +1,9 @@
 import './Message.css';
 
-function Message(props) { 
+function Message({text, user}) { 
   return ( 
     <div className="Message" > 
-       <h3 className={'message'}> - {props.text}!</h3> 
+       <h3 className={'message'}> - {user} - {text}!</h3> 
     </div> 
   ); 
 }
