@@ -10,6 +10,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 1em;
 }
 
 .App-link {
@@ -18,5 +19,25 @@
 
 .heading {
   color:cadetblue;
+}
+
+.input-field {
+  line-height: 2em;
+  width: 40em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border: 4mm gray;
+  color: green;
+  background-color: lightgray;
+  font-size: large;
+}
+
+.input-button {
+  line-height: 2em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border: 1mm gray;
+  background-color: lightgray;
+  font-size: large;
 }
 
