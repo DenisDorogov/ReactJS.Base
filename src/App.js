@@ -2,34 +2,19 @@ import './App.css';
 import Message from './Message';
 import { useState } from 'react';
 
-const DEFAULT_LIST = [
-  {
-    id:1,
-    author: 'John',
-    text: 'first message'
-  },
-  {
-    id:2,
-    author: 'Nick',
-    text: 'second message'
-  },
-  {
-    id:3,
-    author: 'Sam',
-    text: 'third message'
-  }
-];
 
-function App() { 
-  //Долго боролся с useState. Почему-то messageList был не массивом, а объектом, включающим параметры
-  // переданные в App(), (пришлось их убрать). 
-const [messageList, setMessageList] = useState(DEFAULT_LIST);
+function App({greeting}) {  
+const [messageList, setMessageList] = useState([]);
 const [inputMessage, setInputMessage] = useState('');
 
 
 const addInputMessage = (event) => {
-  console.log('messageList: ', messageList);
+  event.preventDefault();
+  console.log(inputMessage);
   setMessageList([...messageList, inputMessage]);
+  setInputMessage({
+    author: '',
+    text: '',});
 }
 
 const handleChange = (event) => {
@@ -37,17 +22,15 @@ const handleChange = (event) => {
     author: 'User',
     text: event.target.value,
   });
+  
 }
-
-//Не понял как передать из введённую строку по onSubmit
-//по onChange сохраняется посимвольно.... да и вообче не сохраняется.
   return ( 
     <div className="App" > 
       <header className='App-header'>
-        <h1 className='heading'>{'Homework 1 from Denis Dorogov'}</h1> 
+        <h1 className='heading'>{greeting}</h1> 
       </header>
       <form onSubmit={addInputMessage}> 
-        <input type='text' className='input-field' name='input-text' onChange={handleChange} />
+        <input type='text' className='input-field' name='input-text' value={inputMessage.text} onChange={handleChange} />
         <input className='input-button' type = 'submit' value=' Send ' />
       </form>
       <Message list={messageList}/>

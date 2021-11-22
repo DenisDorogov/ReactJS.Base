@@ -1,8 +1,8 @@
 import './Message.css';
 
-function Message(messages) { 
-  // console.log(messages.list);  
-  return messages.list.map((message) => <h3 className='message' key={message.id} >{message.author} - {message.text}</h3>);
+function Message({list}) { 
+  return list.map((message, index) => {
+    return <div  key = {index} ><h3 className='message'>{message.author} - {message.text}</h3></div>
+  });
 }
-
 export default Message;
