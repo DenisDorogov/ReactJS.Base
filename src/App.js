@@ -6,6 +6,10 @@ import { useEffect, useState } from 'react';
 function App({greeting}) {  
 const [messageList, setMessageList] = useState([]);
 const [inputMessage, setInputMessage] = useState('');
+const adminMessage = {
+  author: 'Admin',
+  text: 'Your message is accepted!'
+};
 
 
 const sendMessage = (event) => {
@@ -28,15 +32,11 @@ useEffect(() => {
     setTimeout(() => {
       console.log('setTimeout: ', messageList[messageList.length - 1]);
       if ( messageList.length !== 0 && messageList[messageList.length - 1].author !== 'Admin') {
-        setInputMessage({
-          author: 'Admin',
-          text: 'Your message is accepted!'
-        });
-        setMessageList([...messageList, inputMessage]);
+        setMessageList([...messageList, adminMessage]);
         setInputMessage({
           author: '',
           text: '',});
-      } 
+        } 
     }, 1000)
 }, [messageList])
 
