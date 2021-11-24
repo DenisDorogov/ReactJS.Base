@@ -43,9 +43,6 @@ useEffect(() => {
 
   return ( 
     <div className="App" > 
-      {/* <header className='App-header'>
-        <h1 className='heading'>{greeting}</h1> 
-      </header> */}
       <Header/>
       <form onSubmit={sendMessage}> 
         <input type='text' className='input-field' name='input-text' value={inputMessage.text} onChange={handleChange} />
