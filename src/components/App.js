@@ -1,5 +1,6 @@
-import './App.css';
+import '../styles/app.css';
 import Message from './Message';
+import Header from './Header';
 import { useEffect, useState } from 'react';
 
 
@@ -42,9 +43,10 @@ useEffect(() => {
 
   return ( 
     <div className="App" > 
-      <header className='App-header'>
+      {/* <header className='App-header'>
         <h1 className='heading'>{greeting}</h1> 
-      </header>
+      </header> */}
+      <Header/>
       <form onSubmit={sendMessage}> 
         <input type='text' className='input-field' name='input-text' value={inputMessage.text} onChange={handleChange} />
         <input className='input-button' type = 'submit' value=' Send ' />
