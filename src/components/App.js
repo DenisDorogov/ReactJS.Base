@@ -1,7 +1,15 @@
+import * as React from 'react';
 import '../styles/app.css';
 import Message from './Message';
 import Header from './Header';
+import BodyBox from './BodyBox';
+import ListChats from './ListChats';
+import MessageBox from './MessageBox';
+import InputMessage from './InputMessage';
 import { useEffect, useState } from 'react';
+
+
+
 
 
 function App({greeting}) {  
@@ -15,7 +23,6 @@ const adminMessage = {
 
 const sendMessage = (event) => {
   event.preventDefault();
-  console.log(inputMessage);
   setMessageList([...messageList, inputMessage]);
   setInputMessage({
     author: '',
@@ -44,11 +51,17 @@ useEffect(() => {
   return ( 
     <div className="App" > 
       <Header/>
-      <form onSubmit={sendMessage}> 
+        <BodyBox>
+          <ListChats/>
+          <MessageBox/>
+        </BodyBox>
+      
+
+      {/* <form onSubmit={sendMessage}> 
         <input type='text' className='input-field' name='input-text' value={inputMessage.text} onChange={handleChange} />
         <input className='input-button' type = 'submit' value=' Send ' />
-      </form>
-      <Message list={messageList}/>
+      </form> */}
+      
     </div> 
   ); 
 }
