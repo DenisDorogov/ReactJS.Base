@@ -3,21 +3,11 @@ import Box from '@mui/material/Box';
 import Message from './Message';
 import InputMessage from './InputMessage';
 
-// const [messageList, setMessageList] = useState([]);
-// const [inputMessage, setInputMessage] = useState('');
-// const adminMessage = {
-//   author: 'Admin',
-//   text: 'Your message is accepted!'
-// };
-
 //TODO дописать класс
 export default class MessageBox extends React.Component {
   constructor(props) {
     super(props);
-    // [this.messageList, this.setMessageList] = useState([]);
-    // [this.inputMessage, this.setInputMessage] = useState('');
     this.state = {messageList: [], inputMessage: ''};
-    // this.state = {inputMessage: ''};
     console.log('props: ',this.state);
     this.sendMessage = this.sendMessage.bind(this);
   }

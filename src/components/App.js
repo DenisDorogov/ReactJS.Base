@@ -55,13 +55,6 @@ useEffect(() => {
           <ListChats/>
           <MessageBox/>
         </BodyBox>
-      
-
-      {/* <form onSubmit={sendMessage}> 
-        <input type='text' className='input-field' name='input-text' value={inputMessage.text} onChange={handleChange} />
-        <input className='input-button' type = 'submit' value=' Send ' />
-      </form> */}
-      
     </div> 
   ); 
 }
