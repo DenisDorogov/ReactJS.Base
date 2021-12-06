@@ -22,7 +22,7 @@ useEffect(() => {
 
   return ( 
     <div className="App" > 
-      <Header/>
+      
         <BodyBox>
           <ListChats/>
           <MessageBox adminMessage={adminMessage}/>

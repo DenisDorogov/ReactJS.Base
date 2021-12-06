@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import App from './components/App';
+import Routes from './components/Routes';
 import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
+import Header from './components/Header';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +14,8 @@ ReactDOM.render(
     <React.Fragment>
       <CssBaseline />
         <Container fixed>
-          <App/>
+          <Header/>
+          <Routes/>
         </Container>
     </React.Fragment>
       
