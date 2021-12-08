@@ -12,17 +12,20 @@ import { useParams } from 'react-router';
 
 
 function App() {  
-  const {chatID} = useParams();
+  let {chatID} = useParams();
   const adminMessage = {
     author: 'Admin',
     text: 'Your message is accepted!'
   };
 
   const initialChats = {
-    id1: { name: 'Mick', messages: [{ author: 'Admin', text: 'Test message'}]},
-    id2: { name: 'Jack', messages: [{ author: 'Admin', text: 'Test message'}]},
-    id3: { name: 'Ben', messages: [{ author: 'Admin', text: 'Test message'}]}
+    id0: { name: 'Admin', messages: [{ author: 'Admin', text: 'Chat not choosed'}]},
+    id1: { name: 'Mick', messages: [{ author: 'Mick', text: 'Hello User'}]},
+    id2: { name: 'Jack', messages: [{ author: 'Jack', text: 'Hello User'}]},
+    id3: { name: 'Ben', messages: [{ author: 'Ben', text: 'Hello User'}]}
   }
+
+
   // console.log('App adminMessage:', adminMessage);
   // console.log('App chatID:', chatID);
   // console.log('App initialChats:', initialChats);
@@ -31,7 +34,7 @@ function App() {
     document.title = 'Chhhat';
    } , []);
 
-  useEffect(() => {console.log('useEffect App')})
+   if (chatID == undefined) chatID = 'id0';
 
   return ( 
     <div className="App" > 

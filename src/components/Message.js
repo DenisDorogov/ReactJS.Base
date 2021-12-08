@@ -2,7 +2,7 @@ import '../styles/message.css';
 
 function Message({chatID, list}) {
   return list.map((message, index) => {
-    return <div  key = {index} ><h3 className='message'>{message.author} - {message.text}</h3></div>
+    return <div  key = {index} ><h4 className='message'>{message.author}:&nbsp;&nbsp;&nbsp;{message.text}</h4></div>
   });
 }
 export default Message;

@@ -1,5 +1,7 @@
 .message {
     margin-top: 10px;
+    margin-left: 20px;
     color:green;
     height: 20px;
+    text-align: start;
 }

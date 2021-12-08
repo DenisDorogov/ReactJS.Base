@@ -23,7 +23,7 @@ export default function InputMessage({inputMessage, setInputMessage, messageList
     }
 
     const sendMessage = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         addMessage(messageList, inputMessage);
         console.log('InputMessage messageList:', messageList[chatID].messages);
         setInputMessage({

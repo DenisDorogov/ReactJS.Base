@@ -16,18 +16,18 @@ export default function ListChats() {
     >
         <Button 
             variant="contained"
-            href="#text-buttons"
+            href="/chats/id1"
             width='20px'
             
         >Mick</Button>
         <Button 
         variant="contained"
-            href="#text-buttons"
+            href="/chats/id2"
             width='20px'
         >Jack</Button>
         <Button 
         variant="contained"
-            href="#text-buttons"
+            href="/chats/id3"
             width='20px'
         >Ben</Button>
     </Box>

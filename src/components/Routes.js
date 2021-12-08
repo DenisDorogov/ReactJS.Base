@@ -16,6 +16,9 @@ export default function Routes() {
                 <Route path="/chats/:chatID?">
                     <App/>
                 </Route>
+                <Route exact path="/chats">
+                    <App current={false} />
+                </Route>
             </Switch>
         </BrowserRouter>
     );

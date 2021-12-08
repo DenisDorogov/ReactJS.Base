@@ -8,10 +8,11 @@ export default function MessageBox({adminMessage, chatID, initialChats}) {
   const [messageList, setMessageList] = useState(initialChats);
   const [inputMessage, setInputMessage] = useState('');
   
-  // console.log('MessageBox initialChats:', {adminMessage, chatID, initialChats});
+  console.log('MessageBox initialChats:', {adminMessage, chatID, initialChats});
   // console.log('MessageBox messageList: ', messageList);
 
-  React.useEffect(() => {
+
+  useEffect(() => {
     console.log('useEffect messageList',messageList);
     setTimeout(() => {
       console.log('if: ', messageList[chatID].messages[messageList[chatID].messages.length - 1].author)
@@ -27,6 +28,11 @@ export default function MessageBox({adminMessage, chatID, initialChats}) {
     }, 1000)
 }, [messageList])
 
+if (chatID == 'id0') {
+  return ( <h2>Choose the chat</h2>);
+
+} else {
+
   return (
     <Box
       sx={{
@@ -34,7 +40,12 @@ export default function MessageBox({adminMessage, chatID, initialChats}) {
         backgroundColor: 'primary.ligth'
       }}
     >
-      <h2>MessageBox</h2>
+      <h2>{messageList[chatID].name}</h2>
+
+        <Message 
+          list={messageList[chatID].messages}
+          chatID={chatID}
+        />
         <InputMessage 
           messageList={messageList} 
           setMessageList={setMessageList} 
@@ -43,10 +54,10 @@ export default function MessageBox({adminMessage, chatID, initialChats}) {
           chatID={chatID}
           adminMessage={adminMessage} 
         />
-        <Message 
-          list={messageList[chatID].messages}
-          chatID={chatID}
-        />
     </Box>
  ) 
+}
+
+
+  
 }
