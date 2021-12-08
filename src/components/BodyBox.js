@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import ListChats from './ListChats';
 import MessageBox from './MessageBox';
 
-export default function BodyBox() {
+export default function BodyBox({adminMessage, chatID, initialChats}) {
   return (
     <Box
       sx={{
@@ -12,8 +12,8 @@ export default function BodyBox() {
         display: 'flex'
       }}
     >
-        <ListChats/>
-        <MessageBox/>
+        <ListChats chatID={chatID}/>
+        <MessageBox adminMessage={adminMessage} chatID={chatID} initialChats={initialChats}/>
     </Box>
   );
 }

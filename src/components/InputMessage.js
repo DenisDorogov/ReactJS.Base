@@ -4,40 +4,49 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export default function InputMessage(props) {
-    const adminMessage = {
-        author: 'Admin',
-        text: 'Your message is accepted!'
-      };
+export default function InputMessage({inputMessage, setInputMessage, messageList, setMessageList, chatID, adminMessage}) {
+    const initialMessage = {author: '', text: ''}
     
 
     const handleChange = (event) => {
-        props.setInputMessage({
+        setInputMessage({
           author: 'User',
           text: event.target.value,
         }); 
     }
 
+    const addMessage = (messagesObj, message) => {
+        let tempObj = messagesObj;
+        // tempObj[chatID].messages = [...tempObj[chatID].messages, message];
+        tempObj[chatID].messages.push(message);
+        setMessageList(tempObj);
+    }
+
     const sendMessage = (event) => {
         event.preventDefault();
-        
-        props.setMessageList([...props.messageList, props.inputMessage]);
-        props.setInputMessage({
+        addMessage(messageList, inputMessage);
+        console.log('InputMessage messageList:', messageList[chatID].messages);
+        setInputMessage({
           author: '',
           text: '',
-        }); 
-      }
+        });
+        }
 
-      useEffect(() => {
-        setTimeout(() => {
-          if ( props.messageList.length !== 0 && props.messageList[props.messageList.length - 1].author !== 'Admin') {
-            props.setMessageList([...props.messageList, adminMessage]);
-            props.setInputMessage({
-              author: '',
-              text: '',});
-            } 
-        }, 1000)
-    }, [props.messageList])
+    //   useEffect(() => {
+    //     console.log('useEffect messageList',messageList);
+    //     setTimeout(() => {
+    //       console.log('if: ', messageList[chatID].messages[messageList[chatID].messages.length - 1].author)
+    //       if ( messageList[chatID].messages.length !== 0 && messageList[chatID].messages[messageList[chatID].messages.length - 1].author !== messageList[chatID].name) {
+    //         let temp = messageList;
+    //         temp[chatID].messages = [...temp[chatID].messages, {author: messageList[chatID].name, text: 'My answer will be later'}];
+    //         setMessageList(temp);
+    //         // addMessage(messageList, {author: messageList[chatID].name, text: 'My answer will be later'})
+    //         setInputMessage({
+    //           author: '',
+    //           text: '',});
+    //         } 
+    //     }, 1000)
+    // }, [messageList])
 
     return (
               <Box
@@ -55,7 +64,7 @@ export default function InputMessage(props) {
                   id="outlined-basic" 
                   label="Outlined" 
                   variant="outlined"
-                  value={props.inputMessage.text}
+                  value={inputMessage.text}
                   onChange={handleChange}
                   />
                   <Button 

@@ -13,7 +13,7 @@ export default function Routes() {
                 <Route exact path="/profile">
                     <Profile/>
                 </Route>
-                <Route exact path="/chats">
+                <Route path="/chats/:chatID?">
                     <App/>
                 </Route>
             </Switch>
