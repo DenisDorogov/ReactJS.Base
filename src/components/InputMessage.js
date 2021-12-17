@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-export default function InputMessage({inputMessage, setInputMessage, messageList, setMessageList, chatID, adminMessage}) {
+export default function InputMessage({inputMessage, setInputMessage, messageList, setMessageList, chatID}) {
     const initialMessage = {author: '', text: ''}
     
 
@@ -25,11 +25,8 @@ export default function InputMessage({inputMessage, setInputMessage, messageList
     const sendMessage = (event) => {
         // event.preventDefault();
         addMessage(messageList, inputMessage);
-        console.log('InputMessage messageList:', messageList[chatID].messages);
-        setInputMessage({
-          author: '',
-          text: '',
-        });
+        console.log('InputMessage messageList[chatID].messages:', messageList[chatID].messages);
+        setInputMessage(initialMessage);
         }
 
     //   useEffect(() => {

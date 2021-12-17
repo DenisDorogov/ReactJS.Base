@@ -4,16 +4,15 @@ import Box from '@mui/material/Box';
 import Message from './Message';
 import InputMessage from './InputMessage';
 
-export default function MessageBox({adminMessage, chatID, initialChats}) {
-  const [messageList, setMessageList] = useState(initialChats);
-  const [inputMessage, setInputMessage] = useState('');
+export default function MessageBox(props) {
+  const {adminMessage, chatID, messageList, setMessageList, inputMessage, setInputMessage} = props;
   
-  console.log('MessageBox initialChats:', {adminMessage, chatID, initialChats});
-  // console.log('MessageBox messageList: ', messageList);
+  // console.log('MessageBox props:', props);
+  console.log('MessageBox messageList: ', props);
 
 
   useEffect(() => {
-    console.log('useEffect messageList',messageList);
+    console.log('Messagebox useEffect messageList',messageList);
     setTimeout(() => {
       console.log('if: ', messageList[chatID].messages[messageList[chatID].messages.length - 1].author)
       if ( messageList[chatID].messages.length !== 0 && messageList[chatID].messages[messageList[chatID].messages.length - 1].author !== messageList[chatID].name) {

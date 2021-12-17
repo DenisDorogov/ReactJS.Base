@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import Header from './components/Header';
+import App from './components/App';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,8 +14,7 @@ ReactDOM.render(
     <React.Fragment>
       <CssBaseline />
         <Container fixed>
-          <Header/>
-          <Routes/>
+          <App/>
         </Container>
     </React.Fragment>
       
