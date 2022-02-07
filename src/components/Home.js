@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from "react-router-dom";
 import {ListItemButton, ListItemText} from "@mui/material";
 
 export default function Home() {
@@ -13,10 +12,7 @@ export default function Home() {
         <ListItemButton component="a" href="/chats">
             <ListItemText primary="Chats" />
         </ListItemButton>
-
         </>
     )
-
-
 
 }

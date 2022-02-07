@@ -4,8 +4,6 @@ import Profile from "../components/Profile";
 import BodyBox from "../components/BodyBox";
 
 export default function Routes(props) {
-    // console.log('Routes props: ', props);
-    // const {messageList, setMessageList, inputMessage, setInputMessage} = props
     return (
         <BrowserRouter>
             <Switch>
@@ -26,7 +24,6 @@ export default function Routes(props) {
                     ></BodyBox>
                 </Route>
                 <Route exact path="/chats">
-                    {/* <BodyBox adminMessage={adminMessage} chatID={chatID} initialChats={initialChats}></BodyBox> */}
                 </Route>
             </Switch>
         </BrowserRouter>

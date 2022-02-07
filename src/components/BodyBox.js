@@ -6,10 +6,8 @@ import { useParams } from 'react-router';
 
 export default function BodyBox(props) {
   let {chatID} = useParams();
-  console.log('BodyBox chatID:', chatID);
   props.setChatID(chatID);
-  if (chatID == undefined) chatID = 'id0';
-  // console.log('BodyBox props: ', props);
+  if (chatID === undefined) chatID = 'id0';
 
   return (
     <Box
@@ -24,7 +22,6 @@ export default function BodyBox(props) {
           setMessageList = {props.setMessageList}
           inputMessage  = {props.inputMessage}
           setInputMessage  = {props.setInputMessage}
-          adminMessage  = {props.adminMessage}
           messageList = {props.messageList}
           chatID={chatID}
         />
