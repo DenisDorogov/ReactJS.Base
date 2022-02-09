@@ -1,8 +1,11 @@
 import React from 'react';
+import style from "./User.module.css";
 
 const User = () => {
     return (
-        <div>Ava + Description</div>
+        <div className={style.user}>
+            Ava + Description
+        </div>
     );
 }
 

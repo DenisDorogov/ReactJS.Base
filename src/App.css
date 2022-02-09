@@ -11,23 +11,8 @@
   grid-gap: 10px;
 }
 
-.header {
-  grid-area: header;
-  background-color: cadetblue;
-}
 
-.header img {
-  height: 200px;
-}
 
-.nav {
-  grid-area: nav;
-  display: flex;
-  flex-flow: wrap column;
-  background-color: darkcyan;
-}
 
-.main-content {
-  grid-area: content;
-  background-color: aquamarine;
-}
+
+

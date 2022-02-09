@@ -2,10 +2,11 @@ import React from 'react';
 import FeedPosts from './FeedPosts';
 import Post from "./Post";
 import User from "./User";
+import style from "./Profile.module.css";
 
-const MainContent = () => {
+const Profile = () => {
     return (
-        <div className='main-content'>
+        <div className={style.profile}>
             <User/>
             <Post/>
             <FeedPosts/>
@@ -13,4 +14,4 @@ const MainContent = () => {
     );
 }
 
-export default MainContent;
+export default Profile;

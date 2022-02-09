@@ -1,11 +1,14 @@
+import React from 'react';
+import style from './Sidebar.module.css';
+
 const Sidebar = () => {
     return (
-        <nav className='nav'>
-            <a href=''>Point</a>
-            <a href=''>Point</a>
-            <a href=''>Point</a>
-            <a href=''>Point</a>
-            <a href=''>Point</a>
+        <nav className={style.nav}>
+            <a href='/point' className={style.item}>Point</a>
+            <a href='/point' className={style.item}>Point</a>
+            <a href='/point' className={style.item}>Point</a>
+            <a href='/point' className={style.item}>Point</a>
+            <a href='/point' className={style.item}>Point</a>
         </nav>
     );
 }

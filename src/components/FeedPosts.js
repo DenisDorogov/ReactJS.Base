@@ -1,9 +1,9 @@
 import React from 'react';
+import style from "./FeedPosts.module.css";
 
 const FeedPosts = () => {
     return(
-        <div>
-            Last Posts
+        <div className={style.feed}>
             <ul>
                 <li> previous post </li>
                 <li> previous post </li>

@@ -1,0 +1,26 @@
+.nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkcyan;
+}
+
+.item {
+    /* outline: none; */
+    text-decoration: none;
+    color: white;
+}
+
+.item:visited {
+    color:gray;
+}
+.item:hover {
+    color:blue
+}
+.item:focus {}
+
+.item:active {
+    color: black;
+}
