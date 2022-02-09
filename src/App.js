@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import Header from './Header.js'
 import Header from './components/Header'
-import MainContent from './components/MainContent';
+import Profile from './components/Profile';
 import Sidebar from './components/Sidebar';
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <div className="app-wrapper">
       < Header/>
       < Sidebar/>
-      < MainContent/>
+      < Profile/>
     </div>
   );
 }
