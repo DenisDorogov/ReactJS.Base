@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return ( 
     <div className = "header" >
-        <h1> Header </h1> 
+        <img src="https://img.freepik.com/free-vector/blue-company-logo_1032-166.jpg?size=338&ext=jpg" alt="label" />
     </div>
     )
 }

@@ -2,13 +2,15 @@ import React from 'react';
 import './App.css';
 // import Header from './Header.js'
 import Header from './Header'
-import Technologies from './Technologies';
+import MainContent from './MainContent';
+import Sidebar from './Sidebar';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="app-wrapper">
       < Header/>
-      < Technologies/>
+      < Sidebar/>
+      < MainContent/>
     </div>
   );
 }
