@@ -2,13 +2,12 @@ import React from 'react';
 import style from "./Post.module.css";
 
 const Post = () => {
-    return (
+    return(
         <div className={style.post}>
-            My post
-            <div>New Post</div>
-            
+            <p className={style.name}>Name</p>
+            <p className={style.text}>Post</p>
         </div>
-        
+         
     );
 }
 

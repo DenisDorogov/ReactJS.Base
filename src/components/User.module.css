@@ -1,0 +1,26 @@
+.profile {
+    display:flex;
+}
+
+.avatar {
+    height: 
+    200px;
+}
+
+.info {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.name {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.sity {
+    margin-top: 20px;
+}
+
+.about {
+    margin-top: 20px;
+}

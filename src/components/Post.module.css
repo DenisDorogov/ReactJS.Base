@@ -1,0 +1,20 @@
+.post {
+    list-style-type: none;
+    display: flex;
+    margin-top: 20px;
+
+    background-color: #F4E7A4;
+}
+
+.name {
+    margin-left: 20px;
+    font-weight: 700;
+    line-height: 20px;
+
+}
+
+.text {
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    line-height: 20px;
+}

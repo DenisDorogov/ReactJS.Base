@@ -1,6 +1,6 @@
 import React from 'react';
 import FeedPosts from './FeedPosts';
-import Post from "./Post";
+import NewPost from "./NewPost";
 import User from "./User";
 import style from "./Profile.module.css";
 
@@ -8,7 +8,7 @@ const Profile = () => {
     return (
         <div className={style.profile}>
             <User/>
-            <Post/>
+            <NewPost/>   
             <FeedPosts/>
         </div>
     );

@@ -1,0 +1,18 @@
+.post {
+    display: flex;
+    width:100%;
+    margin-top: 20px;
+}
+.input_post {
+    width: 100%;
+    max-width: 400px;
+    line-height: 25px;
+    font-size: 20px;
+}
+
+.send_post {
+    max-width: 100px;
+    min-width: 60px;
+    width: 100%;
+    margin-left: 20px;
+}
