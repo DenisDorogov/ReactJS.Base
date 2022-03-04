@@ -7,9 +7,9 @@ const FeedPosts = () => {
     return(
         <div className={style.feed}>
             <div>
-                <Post name={'Denis'} text="text 1"/> 
-                <Post name={'Denis'} text="text 3" />
-                <Post name={'Denis'} text="text 2" />
+                <Post name={'Denis'} text="text 1" likeCount={30} /> 
+                <Post name={'Denis'} text="text 3" likeCount={30} />
+                <Post name={'Denis'} text="text 2" likeCount={30} />
             </div>
         </div>
     );
