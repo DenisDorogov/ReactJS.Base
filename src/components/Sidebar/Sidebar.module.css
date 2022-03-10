@@ -21,17 +21,20 @@
     
 }
 
-/* .item:visited {
-    color:gray;
-} */
 .item:hover {
-    /* color:#F05344; */
-    background-color: #41C9B2;
-}
-.item:focus {
-    color: #F05344;
-}
 
+    background-color: #41C9B2;
+} 
+
+ .item:focus {
+    color: #41C9B2;
+}
+/* 
 .item:active {
     color: #F4E7A4;
-}
+} */
+
+/* a.active {
+    color:gold;
+    background-color: gold;
+} */
