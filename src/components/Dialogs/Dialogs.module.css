@@ -1,4 +1,78 @@
 .feed {
+    display:grid;
+    grid-template-columns: 30% 70%;
+    height: 100vh;
     
 }
 
+.dialogs_list {
+   width: 80%;
+   margin: 0 auto;
+}
+
+.board {
+    
+    /* width: 80%; */
+    background-color: #177383;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.board:hover {
+    background-color: #072644;
+}
+
+.board:hover .name {
+    color: #F4E7A4;
+}
+
+.name {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height:40px;
+    width: 100%;
+}
+
+.name:visited {
+    color: #072644;
+}
+
+.name:active {
+    color:#F4E7A4;
+}
+
+.dialog {
+    padding: 0 20px 0 10px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    margin: 20px auto 0px;
+    text-align: center;
+    color: 072644;
+}
+
+.message_in {
+ display:flex;
+ margin-top: 20px;
+}
+
+.message_out {
+    display:flex;
+    margin-top: 20px;
+    flex-direction: row-reverse;
+   }
+
+.avatar {
+ margin:20px;
+}
+
+.message {
+/* border: solid #072644 1px; */
+border-radius: 10px;
+width:100%;
+background-color: #F4E7A4; 
+padding: 10px;
+}
