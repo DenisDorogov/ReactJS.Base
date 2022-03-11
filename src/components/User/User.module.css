@@ -1,5 +1,7 @@
 .profile {
     display:flex;
+    width: 94%;
+    margin: 20px auto;
 }
 
 .avatar {

@@ -1,11 +1,12 @@
 .post {
     display: flex;
-    width:100%;
-    margin-top: 20px;
+    justify-content:flex-end ;
+    width:94%;
+    margin: 20px auto;
 }
+
 .input_post {
     width: 100%;
-    max-width: 400px;
     line-height: 25px;
     font-size: 20px;
 }
