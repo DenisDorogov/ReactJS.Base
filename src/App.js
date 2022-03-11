@@ -19,7 +19,7 @@ const App = () => {
       < Sidebar/>
       <div className={style.content}>
                 <Routes>  
-                    <Route path="/dialogs" element={<Dialogs />} />
+                    <Route exact path="/dialogs" element={<Dialogs />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />

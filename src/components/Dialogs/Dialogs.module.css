@@ -1,7 +1,7 @@
 .feed {
     display:grid;
-    grid-template-columns: 30% 70%;
-    height: 100vh;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100vh;
     
 }
 
@@ -32,6 +32,7 @@
     font-weight: 700;
     line-height:40px;
     width: 100%;
+    color: #072644;
 }
 
 .name:visited {
@@ -67,6 +68,9 @@
 
 .avatar {
  margin:20px;
+ height: 50px;
+ background-color: white;
+ background-image: url("https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg");
 }
 
 .message {
