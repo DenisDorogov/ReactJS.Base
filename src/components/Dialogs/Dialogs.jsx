@@ -1,27 +1,9 @@
 import React from 'react';
 import style from "./Dialogs.module.css";
-import { NavLink } from 'react-router-dom';
+import Dialog from './Dialog';
+import Board from './Board';
 
-const Board = (props) => {
-    return (
-        <div className={style.board}>
-            <NavLink to={"/dialogs" + props.path} className={style.name}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Dialog = (props) => {
-    let inOut = props.in ? style.message_in : style.message_out;
-    return (<div className={inOut}>
-        <img src={props.src} alt={props.alt} className={style.avatar} />
-        <div className={style.message}>{props.message}</div>
-    </div>
-    )
-}
-
-const Dialogs = () => {
-
-    let img = "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg"
+let img = "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg"
 
     let dialogs = [
         { path: "/id1", name: "Name1" },
@@ -39,6 +21,8 @@ const Dialogs = () => {
         { src: img, alt: "ava1", message: "Hell", in: true },
     ];
 
+const Dialogs = (props) => {
+    
     const boardList = dialogs.map(el => <Board path={el.path} name={el.name} />)
 
     const messageList = messages.map(el => <Dialog src={el.src} alt={el.alt} message={el.message} in={el.in} />)

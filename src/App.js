@@ -26,14 +26,6 @@ const App = () => {
                     <Route path="/settings" element={<Settings />} />
                 </Routes>
             </div>
-      {/* <Routes>
-        <Route path='/dialogs' component={Dialogs} />
-        <Route path='/profile' component={Profile} />
-      </Routes> */}
-      
-
-
-      {/* < Content/> */}
     </div>
     </BrowserRouter>
     
