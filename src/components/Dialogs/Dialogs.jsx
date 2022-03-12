@@ -4,10 +4,9 @@ import Dialog from './Dialog';
 import Board from './Board';
 
 const Dialogs = (props) => {
-
-    const boardList = props.dialogs.map(el => <Board path={el.path} name={el.name} />)
-
-    const messageList = props.messages.map(el => <Dialog src={el.src} alt={el.alt} message={el.message} in={el.in} />)
+    let src = props.dialogs.img; 
+    const boardList = props.dialogs.dialogs.map(el => <Board path={el.path} name={el.name} />)
+    const messageList = props.dialogs.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
 
     return (
         <div className={style.feed}>

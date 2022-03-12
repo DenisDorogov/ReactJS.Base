@@ -19,8 +19,8 @@ const App = (props) => {
       < Sidebar/>
       <div className={style.content}>
                 <Routes>
-                    <Route exact path="/dialogs" element={<Dialogs img={props.img} dialogs={props.dialogs} messages={props.messages}/>} />
-                    <Route path="/profile" element={<Profile img={props.img} posts={props.posts}/>} />
+                    <Route exact path="/dialogs" element={<Dialogs dialogs={props.state.dialogs}/>} />
+                    <Route path="/profile" element={<Profile profile={props.state.profile}/>} />
                   
 
 
