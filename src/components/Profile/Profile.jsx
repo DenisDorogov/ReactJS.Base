@@ -4,12 +4,12 @@ import NewPost from "./NewPost/NewPost";
 import User from "./User/User";
 import style from "./Profile.module.css";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={style.profile}>
-            <User/>
+            <User img={props.img}/>
             <NewPost/>   
-            <FeedPosts/>
+            <FeedPosts posts={props.posts} img={props.img}/>
         </div>
     );
 }
