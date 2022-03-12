@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from "../Post/Post";
+import Post from "./../Post/Post";
 import style from "./FeedPosts.module.css";
 
 const FeedPosts = () => {
