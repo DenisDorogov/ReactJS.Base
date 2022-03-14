@@ -1,3 +1,8 @@
+export let addPost = (post) => {
+    state.profile.posts.push(post);
+}
+
+
 let state = {
     profile: {
         img: "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg",

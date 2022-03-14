@@ -8,7 +8,7 @@ const Profile = (props) => {
     return (
         <div className={style.profile}>
             <User img={props.profile.img}/>
-            <NewPost/>   
+            <NewPost addPost={props.addPost}/>   
             <FeedPosts posts={props.profile.posts} img={props.profile.img}/>
         </div>
     );

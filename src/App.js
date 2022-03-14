@@ -20,7 +20,7 @@ const App = (props) => {
       <div className={style.content}>
                 <Routes>
                     <Route exact path="/dialogs" element={<Dialogs dialogs={props.state.dialogs}/>} />
-                    <Route path="/profile" element={<Profile profile={props.state.profile}/>} />
+                    <Route path="/profile" element={<Profile profile={props.state.profile} addPost={props.addPost}/>} />
                   
 
 

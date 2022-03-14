@@ -2,13 +2,13 @@ import React from 'react';
 import style from "./NewPost.module.css";
 import state from './../../../redux/state';
 
-const Post = () => {
+const Post = (props) => {
     const postNew = React.createRef();
 
     const addPost = () => {
         let text = postNew.current.value
-        state.profile.posts.push({name: 'Denis', text: text, likeCount: 0},);
-        alert(text);
+        props.addPost({name: 'Denis', text: text, likeCount: 0})
+        alert('Постов стало ' + state.profile.posts.length);
     }
 
     return (
