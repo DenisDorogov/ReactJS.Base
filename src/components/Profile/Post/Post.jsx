@@ -7,7 +7,7 @@ const Post = (props) => {
         <div className={style.post}>
             <p className={style.name}>{props.name}</p>
             <p className={style.text}>{props.text}</p>
-            <button className={style.likes}>Likes {props.likeCount}</button>
+            <button onClick={() => alert('Likes = ' + props.likeCount)} className={style.likes}>Likes {props.likeCount}</button>
         </div>
          
     );
