@@ -19,13 +19,20 @@ const App = (props) => {
       < Sidebar/>
       <div className={style.content}>
                 <Routes>
-                    <Route exact path="/dialogs" element={<Dialogs dialogs={props.state.dialogs}/>} />
-                    <Route path="/profile" element={<Profile profile={props.state.profile} addPost={props.addPost}/>} />
-                  
+                    <Route exact 
+                      path="/dialogs" 
+                      element={
+                        <Dialogs dialogs={props.state.dialogs} />} 
+                    />
 
+                    <Route 
+                      path="/profile" 
+                      element={
+                        <Profile 
+                          profile={props.state.profile} 
+                          dispatch={props.dispatch}/>} 
+                    />
 
-                    {/* <Route exact path="/dialogs" element={<Dialogs />} />
-                    <Route path="/profile" element={<Profile />} /> */}
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
                     <Route path="/settings" element={<Settings />} />
