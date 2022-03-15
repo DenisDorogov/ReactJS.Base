@@ -1,0 +1,33 @@
+.post {
+    list-style-type: none;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #F4E7A4;
+}
+
+.name {
+    margin-left: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 100px;
+
+}
+
+.text {
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    line-height: 20px;
+    width:100%;
+}
+
+.likes {
+    width: 100px;
+    margin: 20px 20px o 20px;
+    border-style: none;
+    background-color: #F4E7A4;
+}
+
+.likes:hover {
+    background-color: white;
+}

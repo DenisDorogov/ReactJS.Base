@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/Header/Header'
+import Content from './components/Content/Content';
+import Sidebar from './components/Sidebar/Sidebar';
+import Profile from './components/Profile/Profile';
+import Dialogs from './components/Dialogs/Dialogs';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Settings from './components/Settings/Settings';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import style from "./components/Content/Content.module.css";
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className="app-wrapper">
+      < Header/>
+      < Sidebar/>
+      <div className={style.content}>
+                <Routes>
+                    <Route exact 
+                      path="/dialogs" 
+                      element={
+                        <Dialogs dialogs={props.state.dialogs} />} 
+                    />
+
+                    <Route 
+                      path="/profile" 
+                      element={
+                        <Profile 
+                          profile={props.state.profile} 
+                          dispatch={props.dispatch}/>} 
+                    />
+
+                    <Route path="/news" element={<News />} />
+                    <Route path="/music" element={<Music />} />
+                    <Route path="/settings" element={<Settings />} />
+                </Routes>
+            </div>
     </div>
+    </BrowserRouter>
+    
   );
 }
 

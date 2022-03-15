@@ -1,0 +1,13 @@
+.feed {
+    width: 94%;
+    margin: 0 auto;
+}
+
+.post {
+    list-style-type: none;
+    
+    display: flex;
+    margin-top: 20px;
+    background-color: #F4E7A4;
+
+}

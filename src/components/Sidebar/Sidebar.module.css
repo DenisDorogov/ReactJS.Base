@@ -1,0 +1,40 @@
+.nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    background-color: #072644;
+    padding: 10px 0 30px;
+}
+
+.item {
+    text-decoration: none;
+    line-height: 40px;
+    width: 100px;
+    margin-top: 20px; 
+    color: #072644;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: bold;
+    text-align: center;
+    background-color:#177383;
+    
+}
+
+.item:hover {
+
+    background-color: #41C9B2;
+} 
+
+ .item:focus {
+    color: #41C9B2;
+}
+/* 
+.item:active {
+    color: #F4E7A4;
+} */
+
+/* a.active {
+    color:gold;
+    background-color: gold;
+} */
