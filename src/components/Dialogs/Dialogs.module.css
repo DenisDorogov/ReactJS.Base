@@ -16,6 +16,7 @@
     background-color: #177383;
     padding-left: 10px;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 .board:hover {
@@ -71,11 +72,12 @@
  height: 50px;
  background-color: white;
  background-image: url("https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg");
+ border-radius: 5px;
 }
 
 .message {
 /* border: solid #072644 1px; */
-border-radius: 10px;
+border-radius: 5px;
 width:100%;
 background-color: #F4E7A4; 
 padding: 10px;

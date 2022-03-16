@@ -6,14 +6,18 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 const Post = (props) => {
     const postNew = React.createRef();
 
-    let addPost = () => {
+    let addPost = (event) => {
+        event.preventDefault();
         props.dispatch(addPostActionCreator());
+
     }
 
-    let onPostChange = () => {
-        let text = postNew.current.value;
+    let onPostChange = (event) => {
+
+        let text = event.target.value;
         let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
+
 
     }
 
@@ -25,6 +29,7 @@ const Post = (props) => {
                 ref={ postNew }
                 onChange={ onPostChange }
                 value={props.newPostText}
+                placeholder='Enter your post'
             />
             <button 
                 className={style.send_post} 

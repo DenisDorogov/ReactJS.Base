@@ -11,7 +11,7 @@
     height: 80px;
     font-size: 20px;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .send_post {
@@ -21,6 +21,7 @@
     height: 40px;
     margin-left: 20px;
     border-style: none;
+    border-radius: 5px;
    
 }
 

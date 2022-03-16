@@ -1,4 +1,4 @@
-.app-wrapper {
+.app_wrapper {
   width: 900px;
   margin: 0 auto;
   display: grid;
@@ -10,6 +10,14 @@
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
+
+.content {
+  grid-area: content;
+  background-color: aquamarine;
+  min-height: 100vh;
+}
+
+
 
 .example {
   color: #072644;

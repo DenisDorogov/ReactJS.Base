@@ -10,7 +10,7 @@
 .item {
     text-decoration: none;
     line-height: 40px;
-    width: 100px;
+    width: 120px;
     margin-top: 20px; 
     color: #072644;
     font-size: 26px;
@@ -18,6 +18,8 @@
     font-style: bold;
     text-align: center;
     background-color:#177383;
+    border-radius: 5px;
+
     
 }
 
