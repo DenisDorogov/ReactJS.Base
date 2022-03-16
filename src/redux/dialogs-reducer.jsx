@@ -1,7 +1,26 @@
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
-const dialogsReducer = (state, action) => {
+let initialState1 = {
+    img: "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg",
+    dialogs: [
+        { path: "/id1", name: "Name1" },
+        { path: "/id2", name: "Name2" },
+        { path: "/id3", name: "Name3" },
+        { path: "/id4", name: "Name4" },
+        { path: "/id5", name: "Name5" },
+    ],
+    messages: [
+        { alt: "ava1", message: "Hello!!!", in: true },
+        { alt: "ava1", message: "Hello", in: false },
+        { alt: "ava1", message: "Hell", in: true },
+        { alt: "ava1", message: "Hell!!!", in: true },
+        { alt: "ava1", message: "Hell", in: true },
+    ],
+    newMesageText: ''
+}
+
+const dialogsReducer = (state = initialState1, action) => {
     switch (action.type){
         case UPDATE_NEW_MESSAGE_TEXT: 
             state.newMesageText = action.newMessagetext;
