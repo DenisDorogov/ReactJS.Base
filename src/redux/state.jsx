@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import dialogsReducer from './dialogs-reducer';
+import profileReducer from './profile-reducer';
 
 
 let store = {
@@ -48,46 +46,12 @@ let store = {
     },
     
     dispatch(action) {
-        switch (action.type){
-            case ADD_POST: 
-                let newPost = {
-                    name: 'Denis',
-                    text: this._state.profile.newPostText,
-                    likeCount: 0
-                };
-                this._state.profile.posts.push(newPost);
-                this._state.profile.newPostText = ''; //Обнулил поле
-                this._callSubscriber(this._state);
-                break;
-            case UPDATE_NEW_POST_TEXT:
-                this._state.profile.newPostText = action.newText;
-                this._callSubscriber(this._state);
-                break;
-            case UPDATE_NEW_MESSAGE_TEXT: 
-                this._state.dialogs.newMesageText = action.newMessagetext;
-                this._callSubscriber(this._state);
-                break;
-            case SEND_MESSAGE:  
-                let text = this._state.dialogs.newMesageText;
-                this._state.dialogs.newMesageText = '';
-                this._state.dialogs.messages.push( {alt: "ava1", message: text, in: false});
-                this._callSubscriber(this._state);
-                break;
-            default: alert('Action type not valid');
-        }
+        this._state.profile = profileReducer(this._state.profile, action);
+        this._state.dialogs = dialogsReducer(this._state.dialogs, action);
+        this._callSubscriber(this._state);
     }
 }
-
-// Action Creator объект аргумент для dispatch 
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text })
-
-export const sendMessageCreator = () => ({type: SEND_MESSAGE})
-export const updateNewMessageCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE_TEXT, newMessagetext: text })
-
-    
+  
 export default store;
 // window.store = store;
 

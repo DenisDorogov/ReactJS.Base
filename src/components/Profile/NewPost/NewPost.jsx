@@ -1,25 +1,23 @@
 import React from 'react';
 import style from "./NewPost.module.css";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 
 const Post = (props) => {
     const postNew = React.createRef();
 
-    let addPost = (event) => {
-        event.preventDefault();
-        props.dispatch(addPostActionCreator());
-
-    }
-
     let onPostChange = (event) => {
-
         let text = event.target.value;
         let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
-
-
     }
+
+    let addPost = (event) => {
+        event.preventDefault();
+        props.dispatch(addPostActionCreator());
+    }
+
+    
 
     return (
         <div>

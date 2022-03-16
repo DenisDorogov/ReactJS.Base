@@ -3,9 +3,10 @@ import style from "./Dialogs.module.css";
 import Dialog from './Dialog';
 import Board from './Board';
 import state from './../../redux/state';
-import {sendMessageCreator, updateNewMessageCreator} from './../../redux/state';
+import {sendMessageCreator, updateNewMessageCreator} from './../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
+    console.log('dialogs state: ', state);
     let src = props.dialogs.img; 
     const boardList = props.dialogs.dialogs.map(el => <Board path={el.path} name={el.name} />)
     const messageList = props.dialogs.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
