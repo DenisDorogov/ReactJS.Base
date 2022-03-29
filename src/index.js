@@ -12,10 +12,9 @@ let rendererWindow = (state) => { //Для перерисовки страниц
 ReactDOM.render(
   <BrowserRouter>
    <React.StrictMode>
-    <App state={state} dispatch={store.dispatch.bind(store)} />
-    {/* Bind для преопределения контекста. Функция будет вызываться ниже по дереву */}
+      <App store={store} />
    </React.StrictMode>
-   </BrowserRouter>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

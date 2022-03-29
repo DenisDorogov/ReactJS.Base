@@ -1,23 +1,9 @@
 import React from 'react';
 import style from "./NewPost.module.css";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 
-const Post = (props) => {
+const NewPost = (props) => {
     const postNew = React.createRef();
-
-    let onPostChange = (event) => {
-        let text = event.target.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
-    }
-
-    let addPost = (event) => {
-        event.preventDefault();
-        props.dispatch(addPostActionCreator());
-    }
-
-    
 
     return (
         <div>
@@ -25,13 +11,13 @@ const Post = (props) => {
             <textarea 
                 className={style.input_post} 
                 ref={ postNew }
-                onChange={ onPostChange }
-                value={props.newPostText}
+                onChange={ props.onPostChange }
+                value={props.profilePage.newPostText}
                 placeholder='Enter your post'
             />
             <button 
                 className={style.send_post} 
-                onClick={addPost} 
+                onClick={props.addPost} 
                 >Send
             </button>
             </form>
@@ -40,4 +26,4 @@ const Post = (props) => {
     );
 }
 
-export default Post;
+export default NewPost;

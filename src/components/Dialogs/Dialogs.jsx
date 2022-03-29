@@ -2,25 +2,13 @@ import React from 'react';
 import style from "./Dialogs.module.css";
 import Dialog from './Dialog';
 import Board from './Board';
-import state from './../../redux/redux-store';
-import {sendMessageCreator, updateNewMessageCreator} from './../../redux/dialogs-reducer';
 
 const Dialogs = (props) => {
 
-    let src = props.dialogs.img; 
-    const boardList = props.dialogs.dialogs.map(el => <Board path={el.path} name={el.name} />)
-    const messageList = props.dialogs.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
-    let newMesageText = props.dialogs.newMesageText;
-
-    const onMessageChange = (event) => {
-        let text = event.target.value
-        state.dispatch(updateNewMessageCreator( text));
-    }
-
-    const sendMessage = (event) => {
-        event.preventDefault();
-        state.dispatch(sendMessageCreator())
-    }
+    let src = props.dialogsPage.img; 
+    const boardList = props.dialogsPage.dialogs.map(el => <Board path={el.path} name={el.name} />)
+    const messageList = props.dialogsPage.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
+    let newMesageText = props.dialogsPage.newMesageText;
 
     return (
         <div className={style.feed}>
@@ -35,10 +23,14 @@ const Dialogs = (props) => {
                     <textarea 
                         className={style.input_message} 
                         value={newMesageText}
-                        onChange={onMessageChange} 
+                        onChange={props.onMessageChange} 
                         placeholder='Enter your message'
                     />
-                    <button className={style.send_message} onClick={sendMessage} >Send</button>
+                    <button 
+                        className={style.send_message} 
+                        onClick={props.sendMessage} >
+                            Send
+                    </button>
                 </form>
 
             </div>
