@@ -5,15 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 
 let rendererWindow = (state) => { //Для перерисовки страницы. Временно
 
 ReactDOM.render(
   <BrowserRouter>
-   <React.StrictMode>
-      <App store={store} />
-   </React.StrictMode>
+   <Provider store={store}>
+      <App state={state}/>
+   </Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );

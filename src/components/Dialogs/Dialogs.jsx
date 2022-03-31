@@ -4,10 +4,9 @@ import Dialog from './Dialog';
 import Board from './Board';
 
 const Dialogs = (props) => {
-
     let src = props.dialogsPage.img; 
-    const boardList = props.dialogsPage.dialogs.map(el => <Board path={el.path} name={el.name} />)
-    const messageList = props.dialogsPage.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
+    let boardList = props.dialogsPage.dialogs.map(el => <Board path={el.path} name={el.name} />)
+    let messageList = props.dialogsPage.messages.map(el => <Dialog src={src} alt={el.alt} message={el.message} in={el.in} />)
     let newMesageText = props.dialogsPage.newMesageText;
 
     return (

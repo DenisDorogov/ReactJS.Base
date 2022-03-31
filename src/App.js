@@ -19,11 +19,11 @@ const App = (props) => {
 
                     <Route exact 
                       path="/dialogs" 
-                      element={<DialogsContainer store={props.store} />} 
+                      element={<DialogsContainer />} 
                     />
                     <Route 
                       path="/profile" 
-                      element={<Profile store={props.store}/>} 
+                      element={<Profile state={props.state.profilePage} />} 
                     />
                     <Route path="/news" element={<News />} />
                     <Route path="/music" element={<Music />} />
