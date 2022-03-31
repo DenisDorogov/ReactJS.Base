@@ -21,18 +21,22 @@ let initialState1 = {
 }
 
 const dialogsReducer = (state = initialState1, action) => {
+    let stateCopy = {...state};
+    stateCopy.messages = [...state.messages];
+
     switch (action.type){
-        case UPDATE_NEW_MESSAGE_TEXT: 
-            state.newMesageText = action.newMessagetext;
-            return state;
-        case SEND_MESSAGE:  
-            let text = state.newMesageText;
-            state.newMesageText = '';
-            state.messages.push( {alt: "ava1", message: text, in: false});
-            return state;
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            stateCopy.newMesageText = action.newMessagetext;
+            return stateCopy;
+        }
+        case SEND_MESSAGE: { 
+            let text = state.newMesageText;        
+            stateCopy.newMesageText = '';
+            stateCopy.messages.push( {alt: "ava1", message: text, in: false});
+            return stateCopy;
+        }
         default: return state;
-    }
-    
+    }    
 }
 
 // Action Creator объект аргумент для dispatch 
