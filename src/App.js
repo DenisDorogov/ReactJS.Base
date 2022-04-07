@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import News from './components/News/News';
+import UsersContaner from './components/Users/UsersContainer';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { Route, Routes } from 'react-router-dom';

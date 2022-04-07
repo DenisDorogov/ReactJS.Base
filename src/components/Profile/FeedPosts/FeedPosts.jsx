@@ -1,6 +1,6 @@
 import React from 'react';
 import Post from "./../Post/Post";
-import style from "./FeedPosts.module.css";
+import style from "./feedPosts.module.css";
 
 const FeedPosts = (props) => {
     let postsList = props.posts.map( el => <Post name={el.name} text={el.text} likeCount={el.likeCount} />)

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
-import style from './Dialogs.module.css'
+import style from './dialogs.module.css'
 
 
 const Board = (props) => {

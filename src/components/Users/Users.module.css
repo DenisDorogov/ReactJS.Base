@@ -1,0 +1,44 @@
+.wrapper {
+    height: 100vh;
+    /* width: 100%; */
+    padding: 0px 20px 0 20px;
+}
+
+.userBox {
+    background-color: #F4E7A4;
+    /* height: 100px; */
+    width: 100%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 140px 1fr 100px;
+    border-radius: 5px;
+}
+
+.userBox img {
+    width: 140px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.userInfo {
+    padding-left: 20px;
+}
+
+.userBox p {
+    margin: 10px;
+}
+
+.followButton {
+    line-height: 40px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: #F4E7A4;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.followButton:hover {
+    font-size: 24px;
+}

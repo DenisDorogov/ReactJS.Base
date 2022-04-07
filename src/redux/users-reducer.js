@@ -2,44 +2,48 @@ const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
-initialState = {
-    img: "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg",
-    usersList: [
-        {id: 1, name: 'Victor', follow: false, location:{coutnry: 'Russia', sity: 'Moscow'}},
-        {id: 2, name: 'Victor', follow: false, location:{coutnry: 'Russia', sity: 'Moscow'}},
-        {id: 3, name: 'Victor', follow: false, location:{coutnry: 'Russia', sity: 'Moscow'}},
-    ]
-
+let initialState = { 
+	users: []
 }
 
 
 const usersReducer = (state = initialState, action) => {
     let stateCopy;
-    
-    
 	switch (action.type) {
 	        case FOLLOW: {
-	        stateCopy = {...state};
-	        stateCopy.usersList = stateCopy.usersList.map( u => {
-	        	if (u.id == action.userId) u.follow = true;
+	        stateCopy = {...state}; 
+	        stateCopy.users = stateCopy.users.map( u => {
+	        	if (u.id == action.userId) u.followed = true;
 	        	return u;
 	        })
-	        console.log('follow state: ', )
+			//Копируем объект, внося изменения.
+	        
         	    return stateCopy;
         	}
         	case UNFOLLOW: {
-        	stateCopy = {...state};
-	        stateCopy.usersList = stateCopy.usersList.map( u => {
-	        	if (u.id == action.userId) u.follow = false;
-	        	return u;
-	        })
-	        console.log('unfollow state: ', )
-        	    return stateCopy;
+				return { //как на уроке
+					...state,
+					users: state.users.map( u => {
+						if (u.id === action.userId) return {...u, followed: false}
+						return u;	
+					})
+				}
+        	
         	}
        	 case SET_USERS: {
-        		return;
+			console.log('set users: ', state )
+        		return {...state, users: [...state.users, ...action.newUsers]};
         	}
         	default: return state;
     }
 };
+
+export const toFollowActionCreator = (userId) => ({type: FOLLOW, userId})
+export const toUnFollowActionCreator = (userId) => ({type: UNFOLLOW, userId})
+export const setUsersActionCreator = (users) => ({
+	type: SET_USERS,
+	newUsers: users
+})
+
+export default usersReducer;
    

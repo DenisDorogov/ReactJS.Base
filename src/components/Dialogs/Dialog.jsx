@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Dialogs.module.css'
+import style from './dialogs.module.css'
 
 const Dialog = (props) => {
     let inOut = props.in ? style.message_in : style.message_out;

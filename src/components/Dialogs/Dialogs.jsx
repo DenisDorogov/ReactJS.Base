@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "./Dialogs.module.css";
+import style from "./dialogs.module.css";
 import Dialog from './Dialog';
 import Board from './Board';
 

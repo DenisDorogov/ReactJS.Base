@@ -7,7 +7,7 @@ const Sidebar = () => {
         <nav className={style.nav}>
             <NavLink to='/profile' className={style.item} >Profile</NavLink>
             <NavLink to='/dialogs' className={style.item} >Dialogs</NavLink>
-            <NavLink to='/news' className={style.item} >News</NavLink>
+            <NavLink to='/users' className={style.item} >Users</NavLink>
             <NavLink to='/music' className={style.item} >Music</NavLink>
             <NavLink to='/settings' className={style.item} >Settings</NavLink>
         </nav>
