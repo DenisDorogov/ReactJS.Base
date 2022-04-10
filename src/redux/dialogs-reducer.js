@@ -1,8 +1,9 @@
+import UserPhoto from '../assets/img/User.jpg';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState1 = {
-    img: "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg",
+    img: UserPhoto,
     dialogs: [
         { path: "/id1", name: "Name1" },
         { path: "/id2", name: "Name2" },

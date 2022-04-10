@@ -1,8 +1,10 @@
+import UserPhoto from '../assets/img/User.jpg';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
+
 const initialState = {
-    img: "https://imgaz.staticbg.com/customers_avatars/20181219104152_503.jpg",
+    img: UserPhoto,
     posts: [
         {name: 'Denis', text: 'test1', likeCount: 20},
         {name: 'Denis1', text: 'test2', likeCount: 21},
