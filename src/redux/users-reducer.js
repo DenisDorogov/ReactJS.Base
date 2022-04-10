@@ -16,12 +16,10 @@ const usersReducer = (state = initialState, action) => {
 	        	if (u.id == action.userId) u.followed = true;
 	        	return u;
 	        })
-			//Копируем объект, внося изменения.
-	        
         	    return stateCopy;
         	}
         	case UNFOLLOW: {
-				return { //как на уроке
+				return {
 					...state,
 					users: state.users.map( u => {
 						if (u.id === action.userId) return {...u, followed: false}
@@ -31,7 +29,6 @@ const usersReducer = (state = initialState, action) => {
         	
         	}
        	 case SET_USERS: {
-			console.log('set users: ', state )
         		return {...state, users: [...state.users, ...action.newUsers]};
         	}
         	default: return state;

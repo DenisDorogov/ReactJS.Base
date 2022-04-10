@@ -5,18 +5,18 @@ const SEND_MESSAGE = 'SEND-MESSAGE';
 let initialState1 = {
     img: UserPhoto,
     dialogs: [
-        { path: "/id1", name: "Name1" },
-        { path: "/id2", name: "Name2" },
-        { path: "/id3", name: "Name3" },
-        { path: "/id4", name: "Name4" },
-        { path: "/id5", name: "Name5" },
+        { id: 1, path: "/id1", name: "Name1" },
+        { id: 2, path: "/id2", name: "Name2" },
+        { id: 3,path: "/id3", name: "Name3" },
+        { id: 4,path: "/id4", name: "Name4" },
+        { id: 5,path: "/id5", name: "Name5" },
     ],
     messages: [
-        { alt: "ava1", message: "Hello!!!", in: true },
-        { alt: "ava1", message: "Hello", in: false },
-        { alt: "ava1", message: "Hell", in: true },
-        { alt: "ava1", message: "Hell!!!", in: true },
-        { alt: "ava1", message: "Hell", in: true },
+        { id: 1, alt: "ava1", message: "Hello!!!", in: true },
+        { id: 2, alt: "ava1", message: "Hello", in: false },
+        { id: 3, alt: "ava1", message: "Hell", in: true },
+        { id: 4, alt: "ava1", message: "Hell!!!", in: true },
+        { id: 5, alt: "ava1", message: "Hell", in: true },
     ],
     newMesageText: ''
 }
@@ -34,7 +34,7 @@ const dialogsReducer = (state = initialState1, action) => {
             let text = state.newMesageText;
             stateCopy = {
                 ...state,
-                messages: [...state.messages, {alt: "ava1", message: text, in: false}],
+                messages: [...state.messages, { id: state.messages.length, alt: "ava1", message: text, in: false}],
                 //Заменит массив messages, на новый
                 newMesageText: '' 
             };

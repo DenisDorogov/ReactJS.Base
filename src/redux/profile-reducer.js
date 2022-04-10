@@ -6,9 +6,9 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const initialState = {
     img: UserPhoto,
     posts: [
-        {name: 'Denis', text: 'test1', likeCount: 20},
-        {name: 'Denis1', text: 'test2', likeCount: 21},
-        {name: 'Denis2', text: 'test3', likeCount: 200},
+        {id: 1, name: 'Denis', text: 'test1', likeCount: 20},
+        {id: 2, name: 'Denis1', text: 'test2', likeCount: 21},
+        {id: 3, name: 'Denis2', text: 'test3', likeCount: 200},
       ],
     newPostText: ''
 };
@@ -19,6 +19,7 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type){
         case ADD_POST:  {
             let newPost = {
+                id: stateCopy.posts.length,
                 name: 'Denis',
                 text: stateCopy.newPostText,
                 likeCount: 0

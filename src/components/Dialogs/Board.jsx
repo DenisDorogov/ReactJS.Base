@@ -5,7 +5,7 @@ import style from './dialogs.module.css'
 
 const Board = (props) => {
     return (
-        <div className={style.board}>
+        <div className={style.board} key={props.id}>
             <NavLink to={"/dialogs" + props.path} className={style.name}>{props.name}</NavLink>
         </div>
     )

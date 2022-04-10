@@ -4,12 +4,7 @@ import style from './users.module.css';
 import defaultPhoto from '../../assets/img/defaultUser.png';
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        this.getUsers();
-    }
-
-    getUsers() {
+    componentDidMount() {
         if (this.props.users.length === 0) {
             axios.get('https://social-network.samuraijs.com/api/1.0/users?count=20')
             .then(response => {
@@ -39,7 +34,7 @@ class Users extends React.Component {
             <div className={style.wrapper}>
                 {this.props.users.map((u) => { 
                     return (
-                    <div className={style.userBox}>
+                    <div className={style.userBox} key={u.id}>
                         <img src={u.photos.small != null ? u.photos.small : defaultPhoto} 
                             alt={u.name}/>
                         <div className={style.userInfo}>
