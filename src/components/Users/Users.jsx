@@ -6,9 +6,11 @@ import defaultPhoto from '../../assets/img/defaultUser.png';
 class Users extends React.Component {
     componentDidMount() {
         if (this.props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users?count=20')
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.countOnPage}&page=${this.props.currentPage}`)
             .then(response => {
-                this.props.setUsers(response.data.items)
+                this.props.setTotalUsersCount(response.data.totalCount);
+                this.props.setUsers(response.data.items);
+                
             });
         }
     }
@@ -21,6 +23,14 @@ class Users extends React.Component {
             pageItems.push(i);
         }
         return pageItems;
+    }
+
+    setCurrentPage(page) {
+        this.props.setUsersPagination(page);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.countOnPage}&page=${page}`)
+            .then(response => {
+                this.props.setUsers(response.data.items);
+            });
     }
 
     checkFollow = (followed, id) => {
@@ -50,7 +60,7 @@ class Users extends React.Component {
                         )
                     } else {
                         return (
-                        <div className={style.page}>{page}</div>
+                        <div className={style.page} onClick={() => this.setCurrentPage(page)}>{page}</div>
                         )
                     }
                 })}

@@ -4,7 +4,8 @@ import {
     toFollowActionCreator, 
     toUnFollowActionCreator,
     setUsersActionCreator,
-    setUsersPaginationActionCreator} from '../../redux/users-reducer';
+    setUsersPaginationActionCreator,
+    setTotalUsersCountActionCreator} from '../../redux/users-reducer';
 
 
 let mapStateToProps = (state) => {
@@ -29,6 +30,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setUsersPagination: (numPage) => {
             dispatch(setUsersPaginationActionCreator(numPage))
+        },
+        setTotalUsersCount: (count) => {
+            dispatch(setTotalUsersCountActionCreator(count))
         }
     }
 }
