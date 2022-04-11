@@ -13,6 +13,16 @@ class Users extends React.Component {
         }
     }
 
+    getPagesNumbers() {
+        
+        let countAllPages = Math.ceil(this.props.totalCount / this.props.countOnPage);
+        let pageItems = [];
+        for (let i = 1; i <= countAllPages; i++) {
+            pageItems.push(i);
+        }
+        return pageItems;
+    }
+
     checkFollow = (followed, id) => {
         if (followed) {
             return (
@@ -32,6 +42,20 @@ class Users extends React.Component {
     render() {
         return (
             <div className={style.wrapper}>
+                <div className={style.pageBox}>
+                {this.getPagesNumbers().map((page) => {
+                    if (page === this.props.currentPage) {
+                        return(
+                        <div className={`${style.currentPage} ${style.page}`}>{page}</div>
+                        )
+                    } else {
+                        return (
+                        <div className={style.page}>{page}</div>
+                        )
+                    }
+                })}
+                </div>
+
                 {this.props.users.map((u) => { 
                     return (
                     <div className={style.userBox} key={u.id}>

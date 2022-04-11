@@ -4,6 +4,35 @@
     padding: 0px 20px 0 20px;
 }
 
+.pageBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.page {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px 10px 0px 10px;
+    line-height: 40px;
+    width: 30px;
+    color: #072644;
+}
+
+.page:hover {
+    margin-top: 5px;
+    font-size: 28px;
+}
+
+.currentPage {
+    cursor:default;
+    font-weight: 700;
+    font-size: 28px;
+
+}
+
 .userBox {
     background-color: #F4E7A4;
     /* height: 100px; */

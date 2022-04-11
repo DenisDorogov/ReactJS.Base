@@ -1,9 +1,13 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_PAGINATION = 'SET_PAGINATION';
 
 let initialState = { 
-	users: []
+	users: [],
+	totalCount: 22,
+	countOnPage: 5,
+	currentPage: 1
 }
 
 
@@ -40,6 +44,10 @@ export const toUnFollowActionCreator = (userId) => ({type: UNFOLLOW, userId})
 export const setUsersActionCreator = (users) => ({
 	type: SET_USERS,
 	newUsers: users
+})
+export const setUsersPaginationActionCreator = (page) => ({
+	type: SET_PAGINATION, 
+	numPage: page 
 })
 
 export default usersReducer;
