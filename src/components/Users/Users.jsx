@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './users.module.css';
 import defaultPhoto from '../../assets/img/defaultUser.png';
+import Preloader from '../common/Preloader/Preloader';
 
 const Users = (props) => { //Чистый функциональный компонент
-
     let getPagesNumbers = () => {
         let countAllPages = Math.ceil(props.totalCount / props.countOnPage);
         let pageItems = [];
@@ -30,6 +30,8 @@ const Users = (props) => { //Чистый функциональный комп�
     }
 
     return (
+        <>
+        { props.isLoading ? <Preloader /> : null }
         <div className={style.wrapper}>
             <div className={style.pageBox}>
                 {getPagesNumbers().map((page) => {
@@ -62,6 +64,7 @@ const Users = (props) => { //Чистый функциональный комп�
                 )
             })}
         </div>
+        </>
     );
 }
 

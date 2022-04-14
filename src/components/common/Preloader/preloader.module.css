@@ -1,0 +1,14 @@
+.spinnerBox {
+    width: 100vh;
+    height: 100vh;
+    background-color: black;
+    opacity: 70%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+
+}

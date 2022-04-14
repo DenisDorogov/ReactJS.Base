@@ -7,28 +7,33 @@ import {
     toUnFollowActionCreator,
     setUsersActionCreator,
     setUsersPaginationActionCreator,
-    setTotalUsersCountActionCreator
+    setTotalUsersCountActionCreator,
+    setIsLoadingActionCreator
 } from '../../redux/users-reducer';
 
 
 class UsersContainer extends React.Component { //Внутренний контейнер
 
     componentDidMount() {
+        this.props.setIsLoading(true);
         if (this.props.users.length === 0) {
             axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.countOnPage}&page=${this.props.currentPage}`)
                 .then(response => {
                     this.props.setTotalUsersCount(response.data.totalCount);
                     this.props.setUsers(response.data.items);
-
+                    this.props.setIsLoading(false);
                 });
         }
     }
 
     setCurrentPage = (page) => {
+        this.props.setIsLoading(true);
         this.props.setUsersPagination(page);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.countOnPage}&page=${page}`)
             .then(response => {
+                this.props.setIsLoading(false);
                 this.props.setUsers(response.data.items);
+                
             });
     }
 
@@ -42,6 +47,7 @@ class UsersContainer extends React.Component { //Внутренний конте
                 currentPage={this.props.currentPage}
                 users={this.props.users}
                 setCurrentPage={this.setCurrentPage}
+                isLoading={this.props.isLoading}
             />
         );
 
@@ -55,7 +61,8 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users,
         currentPage: state.usersPage.currentPage,
         totalCount: state.usersPage.totalCount,
-        countOnPage: state.usersPage.countOnPage
+        countOnPage: state.usersPage.countOnPage,
+        isLoading: state.usersPage.isLoading
     }
 }
 
@@ -75,6 +82,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setTotalUsersCount: (count) => {
             dispatch(setTotalUsersCountActionCreator(count))
+        },
+        setIsLoading: (isLoading) => {
+            dispatch(setIsLoadingActionCreator(isLoading))
         }
     }
 }
