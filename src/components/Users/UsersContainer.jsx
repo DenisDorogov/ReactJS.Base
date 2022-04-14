@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import Users from './Users';
 import axios from 'axios';
 import {
-    toFollowActionCreator,
-    toUnFollowActionCreator,
-    setUsersActionCreator,
-    setUsersPaginationActionCreator,
-    setTotalUsersCountActionCreator,
-    setIsLoadingActionCreator
+    follow,
+    unfollow,
+    setUsers,
+    setUsersPagination,
+    setTotalUsersCount,
+    setIsLoading
 } from '../../redux/users-reducer';
 
 
@@ -19,9 +19,9 @@ class UsersContainer extends React.Component { //Внутренний конте
         if (this.props.users.length === 0) {
             axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.countOnPage}&page=${this.props.currentPage}`)
                 .then(response => {
+                    this.props.setIsLoading(false);
                     this.props.setTotalUsersCount(response.data.totalCount);
                     this.props.setUsers(response.data.items);
-                    this.props.setIsLoading(false);
                 });
         }
     }
@@ -66,27 +66,11 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userID) => {
-            dispatch(toFollowActionCreator(userID));
-        },
-        unfollow: (userID) => {
-            dispatch(toUnFollowActionCreator(userID));
-        },
-        setUsers: (usersList) => {
-            dispatch(setUsersActionCreator(usersList));
-        },
-        setUsersPagination: (numPage) => {
-            dispatch(setUsersPaginationActionCreator(numPage))
-        },
-        setTotalUsersCount: (count) => {
-            dispatch(setTotalUsersCountActionCreator(count))
-        },
-        setIsLoading: (isLoading) => {
-            dispatch(setIsLoadingActionCreator(isLoading))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer); //Внешний контейнер
+export default connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setUsersPagination,
+    setTotalUsersCount,
+    setIsLoading
+})(UsersContainer); //Внешний контейнер
