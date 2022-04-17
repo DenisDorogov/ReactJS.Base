@@ -1,4 +1,4 @@
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+import {addPost, updateNewPostText} from "../../../redux/profile-reducer";
 import NewPost from './NewPost';
 import {connect} from 'react-redux';
 
@@ -12,12 +12,12 @@ let mapDispatchToProps = (dispatch) => {
     return {
         onPostChange: (event) => {
             let text = event.target.value;
-            let action = updateNewPostTextActionCreator(text);
+            let action = updateNewPostText(text);
             dispatch(action);
         },
         addPost: (event) => {
             event.preventDefault();
-            dispatch(addPostActionCreator());
+            dispatch(addPost());
         }
     }
 }

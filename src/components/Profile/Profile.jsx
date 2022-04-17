@@ -5,12 +5,12 @@ import User from "./User/User";
 import style from "./Profile.module.css";
 
 const Profile = (props) => {
-
+    console.log('Profile props: ', props);
     return (
         <div className={style.profile}>
-            <User img={props.state.img}  />
+            <User {...props}  />
             <NewPostContainer />
-            <FeedPosts posts={props.state.posts} img={props.state.img} />
+            {/* <FeedPosts {...props} /> */}
         </div>
     );
 }

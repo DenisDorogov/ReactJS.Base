@@ -2,7 +2,7 @@ import React from 'react';
 import style from './App.module.css';
 import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContaner from './components/Users/UsersContainer';
 import Music from './components/Music/Music';
@@ -23,7 +23,7 @@ const App = (props) => {
                     />
                     <Route 
                       path="/profile" 
-                      element={<Profile state={props.state.profilePage} />} 
+                      element={<ProfileContainer />} 
                     />
                     <Route path="/users" element={<UsersContaner />} />
                     <Route path="/music" element={<Music />} />

@@ -2,6 +2,7 @@ import React from 'react';
 import style from './users.module.css';
 import defaultPhoto from '../../assets/img/defaultUser.png';
 import Preloader from '../common/Preloader/Preloader';
+import { NavLink } from 'react-router-dom';
 
 const Users = (props) => { //Чистый функциональный компонент
     let getPagesNumbers = () => {
@@ -51,8 +52,10 @@ const Users = (props) => { //Чистый функциональный комп�
             {props.users.map((u) => {
                 return (
                     <div className={style.userBox} key={u.id}>
+                        <NavLink to={'/profile/' + u.id }>
                         <img src={u.photos.small != null ? u.photos.small : defaultPhoto}
                             alt={u.name} />
+                        </NavLink>
                         <div className={style.userInfo}>
                             <p>{u.name}</p>
                             <p>{u.status}</p>
