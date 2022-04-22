@@ -1,12 +1,14 @@
 import {BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../components/Home";
-import Profile from "../components/Profile";
+import Profile from "./profile/Profile";
 import BodyBox from "../components/BodyBox";
+import Chats from "./chats/Chats";
 
 export default function Routes(props) {
     return (
+
         <BrowserRouter>
-            <Switch>
+            {/* <Switch> */}
                 <Route exact path="/">
                     <Home/>
                 </Route>
@@ -14,18 +16,19 @@ export default function Routes(props) {
                     <Profile/>
                 </Route>
                 <Route path="/chats/:chatID?">
-                    <BodyBox 
+                    <Chats 
                         setMessageList = {props.setMessageList}
                         inputMessage  = {props.inputMessage}
                         setInputMessage  = {props.setInputMessage}
                         adminMessage  = {props.adminMessage}
                         messageList = {props.messageList}
                         setChatID = {props.setChatID}
-                    ></BodyBox>
+                    ></Chats>
                 </Route>
                 <Route exact path="/chats">
                 </Route>
-            </Switch>
+            {/* </Switch> */}
         </BrowserRouter>
+
     );
 }

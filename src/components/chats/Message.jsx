@@ -1,4 +1,4 @@
-import '../styles/message.css';
+import '../../styles/message.css';
 
 function Message({ list }) {
   return list.map((message, index) => {

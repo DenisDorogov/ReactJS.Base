@@ -7,19 +7,6 @@ import InputMessage from './InputMessage';
 export default function MessageBox(props) {
   const { chatID, messageList, setMessageList, inputMessage, setInputMessage} = props;
 
-//   useEffect(() => {
-//     setTimeout(() => {
-//       if ( messageList[chatID].messages.length !== 0 && messageList[chatID].messages[messageList[chatID].messages.length - 1].author !== messageList[chatID].name) {
-//         let temp = messageList;
-//         temp[chatID].messages = [...temp[chatID].messages, {author: messageList[chatID].name, text: 'My answer will be later'}];
-//         setMessageList(temp);
-//         setInputMessage({
-//           author: '',
-//           text: '',});
-//         } 
-//     }, 1000)
-// }, [messageList])
-
 if (chatID === 'id0') {
   return ( <h2>Choose the chat</h2>);
 
