@@ -11,14 +11,12 @@ export default function ListChats() {
         backgroundColor: 'primary.light',
         display: 'flex',
         flexDirection: 'column',
-        
       }}
     >
         <Button 
             variant="contained"
             href="/chats/id1"
             width='20px'
-            
         >Mick</Button>
         <Button 
         variant="contained"
