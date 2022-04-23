@@ -2,32 +2,30 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-export default function ListChats() {
+export default function ListChats(props) {
   return (
     <Box
       sx={{
         width: '20%',
         minHeight: 400,
-        backgroundColor: 'primary.light',
+        backgroundColor: 'none',
         display: 'flex',
         flexDirection: 'column',
+        marginTop: '10px'
       }}
     >
-        <Button 
+      {props.chats.map((el, index) => {
+        return (
+          <Button 
             variant="contained"
-            href="/chats/id1"
+            href={`/chats/${index}`}
             width='20px'
-        >Mick</Button>
-        <Button 
-        variant="contained"
-            href="/chats/id2"
-            width='20px'
-        >Jack</Button>
-        <Button 
-        variant="contained"
-            href="/chats/id3"
-            width='20px'
-        >Ben</Button>
+        >
+        {el.chatName}
+        </Button>
+        )
+      })}
+        
     </Box>
   );
 }

@@ -5,9 +5,9 @@ import MessageBox from './MessageBox';
 import { useParams } from 'react-router';
 
 const Chats = (props) => {
-    let {chatID} = useParams();
-  props.setChatID(chatID);
-  if (chatID === undefined) chatID = 'id0';
+  // debugger
+  let {chatID} = useParams();
+  chatID !== undefined ? props.setChatID(chatID) : chatID = props.chatID;
 
   return (
     <Box
@@ -17,13 +17,17 @@ const Chats = (props) => {
         display: 'flex'
       }}
     >
-        <ListChats chatID={chatID}/>
+        <ListChats 
+          sx={{backgroundColor: 'none'}}
+          chatID={chatID} 
+          chats={props.chats}/>
         <MessageBox 
-          setMessageList = {props.setMessageList}
+          setChats = {props.setChats}
           inputMessage  = {props.inputMessage}
-          setInputMessage  = {props.setInputMessage}
-          messageList = {props.messageList}
+          setInputMessage = {props.setInputMessage}
+          chats = {props.chats}
           chatID={chatID}
+          currentUser={props.currentUser}
         />
     </Box>
   );

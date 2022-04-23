@@ -3,6 +3,7 @@ import Home from "../components/Home";
 import Profile from "./profile/Profile";
 import BodyBox from "../components/BodyBox";
 import Chats from "./chats/Chats";
+import Test from '../components/test';
 
 export default function Routes(props) {
     return (
@@ -16,17 +17,10 @@ export default function Routes(props) {
                     <Profile/>
                 </Route>
                 <Route path="/chats/:chatID?">
-                    <Chats 
-                        setMessageList = {props.setMessageList}
-                        inputMessage  = {props.inputMessage}
-                        setInputMessage  = {props.setInputMessage}
-                        adminMessage  = {props.adminMessage}
-                        messageList = {props.messageList}
-                        setChatID = {props.setChatID}
-                    ></Chats>
+                    <Chats {...props} ></Chats>
                 </Route>
-                <Route exact path="/chats">
-                </Route>
+                <Route exact path="/chats"></Route>
+                <Route path="/test"><Test/></Route>
             {/* </Switch> */}
         </BrowserRouter>
 

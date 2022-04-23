@@ -12,6 +12,9 @@ export default function Home() {
         <ListItemButton component="a" href="/chats">
             <ListItemText primary="Chats" />
         </ListItemButton>
+        <ListItemButton component="a" href="/test">
+            <ListItemText primary="Test" />
+        </ListItemButton>
         </>
     )
 

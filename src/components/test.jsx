@@ -1,8 +1,12 @@
+import * as React from 'react';
+import {useState} from 'react';
+
+
 const Image = ({ render }) => { 
     return <div>{render("imageWrapper")}</div>; 
 };
 
-const App = () => { 
+const Test = () => { 
     const [imageSrc, setImageSrc] = useState("someImgSrc"); 
     return ( 
     <Image render={(className) => ( 
@@ -11,3 +15,5 @@ const App = () => {
     </div> )} /> 
     ); 
 };
+
+export default Test;

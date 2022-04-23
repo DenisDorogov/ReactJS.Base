@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Message from './Message';
 import InputMessage from './InputMessage';
 
 export default function MessageBox(props) {
-  const { chatID, messageList, setMessageList, inputMessage, setInputMessage} = props;
+  const {
+    chats,
+    setChats,
+    chatID,
+    users,
+    currentUser, 
+    inputMessage, 
+    setInputMessage} = props;
 
 if (chatID === 'id0') {
   return ( <h2>Choose the chat</h2>);
@@ -19,18 +25,20 @@ if (chatID === 'id0') {
         backgroundColor: 'primary.ligth'
       }}
     >
-      <h2>{messageList[chatID].name}</h2>
+      <h2>{chats[chatID].chatName}</h2>
 
         <Message 
-          list={messageList[chatID].messages}
+          chats={chats}
           chatID={chatID}
         />
         <InputMessage 
-          messageList={messageList} 
-          setMessageList={setMessageList} 
+          chats={chats} 
+          setChats={setChats} 
           inputMessage={inputMessage} 
           setInputMessage={setInputMessage}
           chatID={chatID}
+          users={users}
+          currentUser={currentUser}
         />
     </Box>
  ) 
